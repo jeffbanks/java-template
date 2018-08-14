@@ -5,3 +5,4 @@ bin
 /logs
 .idea
 *.iml
+/out
