@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'com.jjbanks.java.template'
@@ -11,6 +12,18 @@ repositories {
     mavenCentral()
 }
 
+jacocoTestReport {
+    reports {
+        html.destination "${buildDir}/reports/jacocoHtml"
+    }
+}
+
 dependencies {
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    testCompile group: 'org.jmockit', name:'jmockit', version: '1.41'
 }
